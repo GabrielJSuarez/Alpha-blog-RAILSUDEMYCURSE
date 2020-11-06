@@ -1,1 +1,66 @@
+$navbar-default-bg: #000;
+
+.navbar-bg {
+  background-color: $navbar-default-bg;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 @import 'bootstrap/dist/css/bootstrap';
+
+#logo {
+  font-size: 2.7rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.jumbotron {
+  background-image: asset_url("ccdc4d4ed46ebce4759cc8d7ab97-1436001.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 75vh;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  font-size: 8rem;
+  margin-bottom: 3rem;
+  letter-spacing: -1px;
+}
+
+.btn-xlarge {
+  font-size: 2.7rem;
+  background-color: #000;
+  border: none;
+}
+
+footer {
+  margin-top: 4.5rem;
+  padding-top: .5rem;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+  font-size: 2rem;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+  font-size: 2rem;
+}
