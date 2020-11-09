@@ -10,21 +10,31 @@
 <% end %>
 
 <%= form_for @article do |f| %>
-  <p>
-    <%= f.label :title %>
-    <br>
-    <%= f.text_field :title %>
-  </p>
+  <div class="form-group row">
+    <div class="col-form-label col-sm-2">
+      <%= f.label :title %>
+    </div>
 
-  <p>
-    <%= f.label :description %>
-    <br>
-    <%= f.text_area :description %>
-  </p>
+    <div class="col-sm-8">
+      <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="form-group row">
+    <div class="col-form-label col-sm-2">
+      <%= f.label :description %>
+    </div>
+
+    <div class="col-sm-8">
+      <%= f.text_area :description, class: "form-control", placeholder: "Description of article", rows: 5 %>
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <%= f.submit class: "btn btn-primary btn-lg" %>
+    </div>
+  </div>  
 <% end %>
 
-<%= link_to 'Back to Articles Listing', articles_path %>
+[ <%= link_to 'Cancel request and return to Articles Listing', articles_path %> ]
