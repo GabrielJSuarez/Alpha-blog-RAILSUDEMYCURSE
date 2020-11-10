@@ -1,35 +1,24 @@
-<h1>Listing all articles</h1>
-<p>
-  <%= link_to "Create new Article", new_article_path %>
-</p>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
+<h2>Listing All Articles</h2>
 
-  <% @articles.each do |article| %>
-    <tr>
-      <td>
-        <%= article.title %>
-      </td>
+<%= link_to 'Create New Article', new_article_path, class: "btn btn-dark py-3" %>
 
-      <td>
-        <%= article.description %>
-      </td>
+<% @articles.each do |article| %>
+  <div class="card text-center w-50 mx-auto my-3">
+    <div class="card-header font-weight-bold">
+      <%= link_to article.title, article_path(article) %>
+    </div>
 
-      <td>
-        <%= link_to "Edit", edit_article_path(article) %>
-      </td>
+    <div class="card-body">
+      <p class="card-text">
+        <%= truncate(article.description, length: 100) %>
+      </p>
+      <%= link_to 'Edit this article', edit_article_path(article), class: "btn btn-primary" %>
+      <%= link_to 'Delete this article', article_path(article), method: :delete,
+                  data: { confirm: "Are you sure you want to delete the article?"},
+                  class: "btn btn-danger" %>
+    </div>
+  </div>
+<%end %>
 
-      <td>
-        <%= link_to 'Show', article_path(article) %>
-      </td>
 
-      <td>
-        <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
-  <% end %>
-</table>
